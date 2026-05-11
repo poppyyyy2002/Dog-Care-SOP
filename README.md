@@ -1,41 +1,45 @@
-# 🐾 Dog Care SOP
+<div style="font-family: 'Poppins', sans-serif;">
 
-歡迎來到狗狗照顧手冊，希望可以幫忙第一次養狗狗的朋友快速上手！
+<h1 style="color: #5d688a; font-size: 2.5em; font-weight: bold; margin-bottom: 0;">🐾 Dog Care SOP</h1>
+<p style="margin-top: 0; font-style: italic;">made by Poppy H.</p>
 
----
+<p>Welcome to the Dog Care Guide! I hope this helps first-time dog owners get started quickly. Wishing you and your dog a wonderful time together!</p>
 
-### 📝 Checklist
-在接狗狗回家前，請確認以下物品有沒有準備好了：
-- [ ] **飲食：** 幼犬/成犬飼料、不鏽鋼或是陶瓷的飯碗和飲水盆。
-- [ ] **睡眠：** 舒適的睡墊，沒安全感的狗狗可以先使用圍欄建立安全感。
-- [ ] **衛生：** 寵物尿墊、撿便袋、專用洗毛精。
-- [ ] **醫療：** 附近24HR獸醫診所的電話和地址。
+<hr>
 
----
+<h2 style="color: #7a5a58; font-size: 1.8em;">📋 Checklist</h2>
 
-### 🕒 Daily Routine
-標準的狗狗生活時程表：
+In preparation for bringing your dog home, please ensure the following items are ready:
+
+* **Diet:** Puppy/Adult food, stainless steel or ceramic bowls for food and water. **Please avoid roller-ball water bottles (ball-point bottles)**; they are unsuitable for dogs and prevent them from drinking sufficient water.
+* **Sleep:** A comfortable pet bed or a breathable pet cot. For dogs lacking a sense of security, a playpen can help establish a safe space. Covered dog houses are also recommended to reduce anxiety.
+* **Hygiene:** Pet pee pads, poop bags, dog-specific shampoo, nail clippers, and grooming scissors or electric clippers. However, if you are inexperienced or the dog is still adjusting to you, it is highly recommended to visit a professional groomer for nail trimming and haircutting.
+* **Medical:** Phone number and address of the nearest 24HR veterinary clinic, and a sturdy pet carrier or crate.
+
+<hr>
+
+<h2 style="color: #7a5a58; font-size: 1.8em;">🕒 Daily Routine</h2>
 
 ```mermaid
 gantt
-    title 狗狗每日 SOP
+    title Daily Dog Care SOP
     dateFormat  HH:mm
     axisFormat  %H:%M
-    section 晨間
-    餵食與換水       :a1, 07:00, 30m
-    早晨散步         :a2, 07:30, 45m
-    section 午間
-    休息與自由活動   :b1, 09:00, 8h
-    section 晚間
-    晚餐             :c1, 18:00, 30m
-    晚間散步與上廁所   :c2, 19:00, 60m
-    梳毛和遊戲       :c3, 21:00, 30m
+    section Morning
+    Feeding & Water       :a1, 07:00, 30m
+    Morning Walk          :a2, 07:30, 45m
+    section Daytime
+    Rest & Free Time      :b1, 09:00, 8h
+    section Evening
+    Dinner                :c1, 18:00, 30m
+    Evening Walk          :c2, 19:00, 60m
+    Brushing & Interaction:c3, 21:00, 30m
 ```
 ```mermaid
 graph TD
-    Start[發現狗狗異常] --> A{是否有活動力?}
-    A -- 正常 --> B[持續觀察 12 小時]
-    A -- 萎靡 --> C{是否嘔吐或腹瀉?}
-    C -- 是 --> D[立即聯繫獸醫]
-    C -- 否 --> B
+    Start[Abnormal Behavior Detected] --> A{Active?}
+    A -- Yes --> B[Observe for 12 Hours]
+    A -- Lethargic --> C{Vomiting or Diarrhea?}
+    C -- Yes --> D[Contact Vet Immediately]
+    C -- No --> B
 ```
