@@ -1,14 +1,11 @@
-<div style="font-family: 'Poppins', sans-serif;">
+# 🐾 Dog Care SOP
+**made by Poppy H.**
 
-<h1 style="color: #5d688a; font-size: 2.5em; font-weight: bold; margin-bottom: 0;">🐾 Dog Care SOP</h1>
-<p style="margin-top: 0; font-style: italic;">made by Poppy H.</p>
+Welcome to the Dog Care Guide! I hope this helps first-time dog owners get started quickly. Wishing you and your dog a wonderful time together!
 
-<p>Welcome to the Dog Care Guide! I hope this helps first-time dog owners get started quickly. Wishing you and your dog a wonderful time together!</p>
+---
 
-<hr>
-
-<h2 style="color: #7a5a58; font-size: 1.8em;">📋 Checklist</h2>
-
+## 📋 Checklist
 In preparation for bringing your dog home, please ensure the following items are ready:
 
 * **Diet:** Puppy/Adult food, stainless steel or ceramic bowls for food and water. **Please avoid roller-ball water bottles (ball-point bottles)**; they are unsuitable for dogs and prevent them from drinking sufficient water.
@@ -16,9 +13,10 @@ In preparation for bringing your dog home, please ensure the following items are
 * **Hygiene:** Pet pee pads, poop bags, dog-specific shampoo, nail clippers, and grooming scissors or electric clippers. However, if you are inexperienced or the dog is still adjusting to you, it is highly recommended to visit a professional groomer for nail trimming and haircutting.
 * **Medical:** Phone number and address of the nearest 24HR veterinary clinic, and a sturdy pet carrier or crate.
 
-<hr>
+---
 
-<h2 style="color: #7a5a58; font-size: 1.8em;">🕒 Daily Routine</h2>
+## 🕒 Daily Routine
+*(Note: If the chart below doesn't render, please view it in the GitHub repository preview.)*
 
 ```mermaid
 gantt
@@ -34,12 +32,3 @@ gantt
     Dinner                :c1, 18:00, 30m
     Evening Walk          :c2, 19:00, 60m
     Brushing & Interaction:c3, 21:00, 30m
-```
-```mermaid
-graph TD
-    Start[Abnormal Behavior Detected] --> A{Active?}
-    A -- Yes --> B[Observe for 12 Hours]
-    A -- Lethargic --> C{Vomiting or Diarrhea?}
-    C -- Yes --> D[Contact Vet Immediately]
-    C -- No --> B
-```
