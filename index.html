@@ -16,7 +16,7 @@
         }
 
         .container {
-            max-width: 1000px; /* 寬度稍微調大一點以容納圖片 */
+            max-width: 1000px;
             margin: 0 auto;
         }
 
@@ -60,6 +60,7 @@
             font-weight: 700;
             text-align: center;
             margin-top: 0;
+            margin-bottom: 20px;
         }
 
         .subtitle-note {
@@ -68,24 +69,19 @@
             display: block;
             margin-bottom: 30px;
             font-weight: 600;
+            font-size: 1.2rem;
         }
 
-        /* --- Checklist 左右佈局設定 --- */
+        /* --- Checklist 樣式 --- */
         .checklist-item {
-            display: flex; /* 使用彈性佈局 */
-            align-items: center; /* 垂直居中 */
+            display: flex;
+            align-items: center;
             justify-content: space-between;
-            gap: 30px; /* 文字與圖片的間距 */
+            gap: 30px;
             margin-bottom: 50px;
         }
 
-        /* 如果想讓圖片在左、文字在右交替顯示，可以取消下面註釋 */
-        /* .checklist-item:nth-child(even) { flex-direction: row-reverse; } */
-
-        .checklist-text {
-            flex: 1; /* 文字佔據剩餘空間 */
-        }
-
+        .checklist-text { flex: 1; }
         .checklist-text strong {
             color: #7a5a58;
             font-size: 1.6rem;
@@ -96,15 +92,46 @@
         }
 
         .checklist-image {
-            width: 280px; /* 圖片寬度 */
-            height: 200px; /* 圖片高度 */
-            border-radius: 20px; /* 圖片圓角 */
-            object-fit: cover; /* 確保圖片不變形地填充 */
+            width: 280px;
+            height: 200px;
+            border-radius: 20px;
+            object-fit: cover;
             box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-            background-color: #eee; /* 圖片載入前的佔位色 */
         }
 
-        /* 每日行程網格樣式維持不變 */
+        /* --- 新增：Exercise & Rest 表格樣式 --- */
+        .table-container {
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        th {
+            background-color: #7a5a58;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-size: 1rem;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #ffe5df;
+            font-size: 0.95rem;
+            vertical-align: top;
+        }
+
+        tr:last-child td { border-bottom: none; }
+        tr:nth-child(even) { background-color: #fff9f8; }
+
+        /* --- Daily Routine 網格 --- */
         .routine-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -126,12 +153,11 @@
             width: 85px;
         }
 
-        /* 手機版適應：將圖片移至文字下方 */
         @media (max-width: 768px) {
             h1 { font-size: 3.5rem; }
             .checklist-item { flex-direction: column; text-align: center; }
-            .checklist-text strong { border-left: none; padding-left: 0; }
             .checklist-image { width: 100%; height: auto; }
+            th, td { font-size: 0.85rem; padding: 10px; }
         }
     </style>
 </head>
@@ -149,8 +175,6 @@
 
     <div class="section-box">
         <h2>Checklist</h2>
-        
-        <!-- 項目 1 -->
         <div class="checklist-item">
             <div class="checklist-text">
                 <strong>🍴 Diet & Nutrition</strong>
@@ -158,8 +182,6 @@
             </div>
             <img src="diet.jpg" alt="Diet" class="checklist-image">
         </div>
-
-        <!-- 項目 2 -->
         <div class="checklist-item">
             <div class="checklist-text">
                 <strong>😴 Sleep & Security</strong>
@@ -167,17 +189,13 @@
             </div>
             <img src="sleep.jpg" alt="Sleep" class="checklist-image">
         </div>
-
-        <!-- 項目 3 -->
         <div class="checklist-item">
             <div class="checklist-text">
                 <strong>🧼 Hygiene Essentials</strong>
-                Pet pee pads, poop bags, dog shampoo, nail clippers, and grooming scissors/clippers. If you are inexperienced or the dog is not yet comfortable with you, it is recommended to visit a professional groomer for nail trimming and haircuts.
+                Pet pee pads, poop bags, dog shampoo, nail clippers, and grooming scissors/clippers. If you are inexperienced, it is recommended to visit a professional groomer.
             </div>
             <img src="hygiene.jpg" alt="Hygiene" class="checklist-image">
         </div>
-
-        <!-- 項目 4 -->
         <div class="checklist-item">
             <div class="checklist-text">
                 <strong>🏥 Medical Readiness</strong>
@@ -185,7 +203,60 @@
             </div>
             <img src="medical.jpg" alt="Medical" class="checklist-image">
         </div>
+    </div>
 
+    <div class="section-box">
+        <h2>Exercise & Rest Guide</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Dog Type</th>
+                        <th>Suggested Daily Exercise</th>
+                        <th>Exercise Tips</th>
+                        <th>Total Daily Sleep</th>
+                        <th>Rest Focus</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>High Energy</strong><br>(e.g., Border Collie, Husky)</td>
+                        <td>1.5 - 2+ Hours</td>
+                        <td>Jogging, fetch, advanced scent work, agility training.</td>
+                        <td>12 - 14 Hours</td>
+                        <td>Needs high-quality deep sleep; provide a quiet space to wind down after exercise.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Medium/Low Energy</strong><br>(e.g., Poodle, Mixed breeds)</td>
+                        <td>45 - 60 Mins</td>
+                        <td>Leisurely walks, indoor tug-of-war, social interaction.</td>
+                        <td>12 - 14 Hours</td>
+                        <td>Accustomed to segmented light sleep; a quiet environment is sufficient.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Small/Brachycephalic</strong><br>(e.g., Pug, Chihuahua)</td>
+                        <td>20 - 30 Mins</td>
+                        <td>Scent games, short walks (avoid high temperatures).</td>
+                        <td>14 - 16 Hours</td>
+                        <td>Quick energy depletion; needs frequent afternoon naps.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Puppy</strong><br>(Under 1 year)</td>
+                        <td>Small bursts<br>(Age in months × 5 mins)</td>
+                        <td>Low-impact play, socialization exploration, basic commands.</td>
+                        <td>18 - 20 Hours</td>
+                        <td>Critical growth period; lack of sleep affects development and emotional stability.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Senior</strong><br>(7+ years)</td>
+                        <td>30 - 45 Mins<br>(Based on health)</td>
+                        <td>Slow walks, gentle massage, environmental observation.</td>
+                        <td>16 - 18 Hours</td>
+                        <td>Joints tire easily; rest areas need good support (e.g., orthopedic beds).</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <div class="section-box">
@@ -205,7 +276,7 @@
     function addSlot(time) {
         const div = document.createElement('div');
         div.className = 'time-slot';
-        div.innerHTML = `<span class="time-label">${time}</span> <span class="activity-placeholder">Click to plan...</span>`;
+        div.innerHTML = `<span class="time-label">${time}</span> <span class="activity-placeholder">Plan your activity...</span>`;
         grid.appendChild(div);
     }
 </script>
