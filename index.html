@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dog Care SOP</title>
+    <!-- 引入 Fredoka One (標題用) 與 Poppins (內文用) -->
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* 1. 全域字體改為 Poppins */
+        /* 全域字體設定為 Poppins */
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #ffdbb6; /* 總背景色 */
@@ -21,41 +22,40 @@
             margin: 0 auto;
         }
 
-        /* 2. 大標題樣式 */
+        /* 大標題樣式 (再次放大) */
         .header-section {
             text-align: center;
             margin-bottom: 40px;
         }
 
         h1 {
-            font-family: 'Fredoka One', cursive; /* 標題指定字體 */
-            color: #5d688a; /* 指定顏色 */
-            font-size: 4.5rem; /* 放大 */
+            font-family: 'Fredoka One', cursive; /* 僅大標題使用 Fredoka One */
+            color: #5d688a; 
+            font-size: 5.5rem; /* 字體再次放大 */
             font-weight: bold;
             margin-bottom: 5px;
-            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.05);
         }
 
         .author {
             color: #5d688a;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             margin-top: 0;
             display: block;
             font-weight: 600;
         }
 
-        /* 3. 預告詞 (背景不要反白) */
+        /* 預告詞 */
         .intro-text {
             color: #5d688a;
-            font-size: 1.3rem;
+            font-size: 1.35rem;
             text-align: center;
             margin: 40px auto;
-            max-width: 800px;
+            max-width: 850px;
             font-style: italic;
-            font-weight: 500;
         }
 
-        /* 4. 內容區塊區塊樣式 */
+        /* 內容區塊 */
         .section-box {
             background-color: #fff2ef; /* 區塊背景色 */
             padding: 50px;
@@ -64,35 +64,40 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
-        /* 5. 小標題置中放大 */
+        /* 小標題樣式 (Poppins) */
         h2 {
-            color: #7a5a58; /* 指定顏色 */
-            font-size: 3rem; /* 放大 */
-            font-weight: bold;
-            text-align: center; /* 置中 */
+            font-family: 'Poppins', sans-serif;
+            color: #7a5a58;
+            font-size: 3rem;
+            font-weight: 700;
+            text-align: center;
             margin-top: 0;
             margin-bottom: 10px;
         }
 
         .subtitle-note {
+            font-family: 'Poppins', sans-serif;
             color: #7a5a58;
             text-align: center;
             display: block;
             margin-bottom: 30px;
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
 
-        /* Checklist 內容 */
+        /* Checklist 項目標題 (Poppins) */
         .checklist-item {
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
 
         .checklist-item strong {
+            font-family: 'Poppins', sans-serif;
             color: #7a5a58;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+            border-left: 6px solid #7a5a58;
+            padding-left: 15px;
         }
 
         /* Daily Routine 網格 */
@@ -108,72 +113,89 @@
             border-radius: 12px;
             display: flex;
             align-items: center;
-            border-left: 6px solid #7a5a58;
+            border: 1px solid #ffe5df;
         }
 
         .time-label {
             font-weight: bold;
             color: #7a5a58;
-            width: 80px;
+            width: 85px;
             font-size: 1.1rem;
         }
 
         .activity-placeholder {
-            color: #ccc;
-            font-size: 0.9rem;
+            color: #b5b5b5;
+            font-size: 0.95rem;
+        }
+
+        /* 手機版微調 */
+        @media (max-width: 600px) {
+            h1 { font-size: 3.5rem; }
+            .section-box { padding: 30px; }
         }
     </style>
 </head>
 <body>
 
 <div class="container">
+    <!-- Header -->
     <div class="header-section">
         <h1>🐾 Dog Care SOP</h1>
         <span class="author">made by Poppy H.</span>
     </div>
 
+    <!-- Intro -->
     <div class="intro-text">
         Welcome to the Dog Care Manual! We hope this helps first-time dog owners get started quickly. Wishing you and your dog a wonderful time together!
     </div>
 
+    <!-- Checklist Section -->
     <div class="section-box">
         <h2>Checklist</h2>
         <div class="checklist-content">
             <div class="checklist-item">
-                <strong>Diet:</strong>
+                <strong>🍴 Diet & Nutrition</strong>
                 Puppy/Adult kibble, stainless steel or ceramic food and water bowls. Please do not use gravity ball-style water bottles; they are unsuitable for dogs and prevent them from drinking enough water.
             </div>
             <div class="checklist-item">
-                <strong>Sleep:</strong>
+                <strong>😴 Sleep & Security</strong>
                 A comfortable bed or a pet-specific breathable cot. For dogs lacking security, use a playpen initially or buy a roofed kennel to help them feel safe.
             </div>
             <div class="checklist-item">
-                <strong>Hygiene:</strong>
+                <strong>🧼 Hygiene Essentials</strong>
                 Pet pee pads, poop bags, dog shampoo, nail clippers, and grooming scissors/clippers. If you are inexperienced or the dog is not yet comfortable with you, it is recommended to visit a professional groomer for nail trimming and haircuts.
             </div>
             <div class="checklist-item">
-                <strong>Medical:</strong>
+                <strong>🏥 Medical Readiness</strong>
                 Phone number and address of the nearest 24HR veterinary clinic, and a sturdy pet carrier.
             </div>
         </div>
     </div>
 
+    <!-- Daily Routine Section -->
     <div class="section-box">
         <h2>Daily Routine</h2>
-        <span class="subtitle-note">試試看自己規劃和寶貝的每日行程吧！</span>
+        <span class="subtitle-note">Try planning a daily routine with your fur baby!😊</span>
         
         <div class="routine-grid" id="routineGrid">
-            </div>
+            <!-- JavaScript will auto-generate time slots -->
+        </div>
     </div>
 </div>
 
 <script>
-    // 自動生成 05:00 到 00:00 每半小時一格
     const grid = document.getElementById('routineGrid');
+    // Generate slots from 05:00 to 00:00 (next day)
     for (let h = 5; h <= 24; h++) {
         const hour = h === 24 ? "00" : (h < 10 ? "0" + h : h);
+        
+        // HH:00
         addSlot(`${hour}:00`);
-        if (h < 24) addSlot(`${hour}:30`);
+        
+        // HH:30 (Skip 00:30)
+        if (h < 24) {
+            addSlot(`${hour}:30`);
+        }
     }
 
     function addSlot(time) {
