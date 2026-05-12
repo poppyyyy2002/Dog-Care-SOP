@@ -3,221 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dog Care SOP - Poppy H.</title>
+    <title>Dog Care SOP</title>
+    <!-- Importing Poppins Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({ startOnLoad: true, theme: 'neutral' });</script>
-    
     <style>
-        /* 設置全域背景色 */
         body {
-            background-color: #ffdbb6; 
             font-family: 'Poppins', sans-serif;
+            background-color: #ffdbb6; /* Main Background */
             margin: 0;
-            padding: 40px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            padding: 20px;
+            color: #333;
         }
 
         .container {
-            max-width: 900px;
-            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        /* 標題 1 樣式: #5d688a, 粗體放大 */
+        .header-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
         h1 {
             color: #5d688a;
-            font-size: 3.5rem;
+            font-size: 3rem;
             font-weight: 700;
             margin-bottom: 5px;
-            text-align: center;
         }
 
         .author {
-            color: #5d688a;
-            font-size: 1.2rem;
-            text-align: center;
-            margin-bottom: 40px;
-            font-weight: 400;
-        }
-
-        .intro-text {
-            text-align: center;
             font-size: 1.1rem;
-            color: #333;
-            margin-bottom: 50px;
-            line-height: 1.6;
+            color: #5d688a;
+            margin-bottom: 20px;
+            display: block;
         }
 
-        /* 段落區塊背景樣式: #fff2ef */
+        .intro {
+            font-style: italic;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
         .section-box {
-            background-color: #fff2ef;
-            padding: 40px;
-            border-radius: 25px;
-            margin-bottom: 40px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            background-color: #fff2ef; /* Section Background */
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
 
-        /* 小標題樣式: #7a5a58, 放大加粗 */
         h2 {
-            color: #7a5a58;
-            font-size: 2.2rem;
+            color: #7a5a58; /* Adjusted slightly for better contrast */
+            font-size: 2rem;
             font-weight: 700;
             margin-top: 0;
             border-bottom: 2px solid #7a5a58;
             padding-bottom: 10px;
-            margin-bottom: 25px;
         }
 
-        h3 {
-            color: #7a5a58;
-            font-size: 1.3rem;
-            margin-top: 20px;
-            margin-bottom: 10px;
+        ul {
+            list-style-type: none;
+            padding: 0;
         }
 
-        p, li {
-            font-size: 1.05rem;
-            color: #444;
-            line-height: 1.7;
+        li {
+            margin-bottom: 15px;
+            line-height: 1.6;
         }
 
-        .warning-text {
-            color: #b91c1c;
-            font-weight: 600;
+        strong {
+            color: #5d688a;
         }
 
-        /* Routine 表格樣式 */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        th {
-            background-color: #7a5a58;
-            color: white;
-            padding: 12px;
-            text-align: left;
-        }
-
-        td {
-            padding: 10px;
-            border-bottom: 1px solid #e5e7eb;
+        /* Routine Grid */
+        .routine-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
         }
 
         .time-slot {
-            font-weight: 600;
-            color: #7a5a58;
-            width: 120px;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 10px;
+            border-radius: 8px;
+            border-left: 4px solid #7a5a58;
+            display: flex;
+            align-items: center;
         }
 
-        .editable-cell {
-            color: #666;
-            font-style: italic;
+        .time-label {
+            font-weight: 600;
+            min-width: 80px;
+            color: #7a5a58;
+        }
+
+        .activity-input {
+            border: none;
+            background: transparent;
+            font-family: 'Poppins', sans-serif;
+            width: 100%;
+            outline: none;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>🐾 Dog Care SOP</h1>
-    <div class="author">made by Poppy H.</div>
-
-    <div class="intro-text">
-        Welcome to the Dog Care Guide! I hope this helps first-time dog owners get started quickly. <br>
-        Wishing you and your dog a wonderful time together!
+    <!-- Header -->
+    <div class="header-section">
+        <h1>🐾 Dog Care SOP</h1>
+        <span class="author">made by Poppy H.</span>
     </div>
 
+    <!-- Intro -->
+    <div class="intro">
+        Welcome to the Dog Care Manual! We hope this helps first-time dog owners get started quickly. Wishing you and your dog a wonderful time together!
+    </div>
+
+    <!-- Checklist Section -->
     <div class="section-box">
-        <h2>📋 Checklist</h2>
-        <p>Before bringing your dog home, please ensure you have the following items ready:</p>
-        
-        <h3>🍖 Diet</h3>
+        <h2>Checklist</h2>
+        <p>Before bringing your dog home, please ensure you have prepared the following items:</p>
         <ul>
-            <li>Puppy or Adult dog food.</li>
-            <li>Stainless steel or ceramic bowls for food and water.</li>
-            <li><span class="warning-text">Important:</span> Do not use roller-ball water bottles. They prevent dogs from drinking sufficient water and can be harmful.</li>
-        </ul>
-
-        <h3>💤 Sleep</h3>
-        <ul>
-            <li>A comfortable pet bed or a breathable pet cot.</li>
-            <li>Playpens are recommended for dogs lacking security to establish a safe space.</li>
-            <li>Roofed dog houses help reduce fear for anxious dogs.</li>
-        </ul>
-
-        <h3>🧼 Hygiene</h3>
-        <ul>
-            <li>Pet pee pads, poop bags, and dog-specific shampoo.</li>
-            <li>Nail clippers, grooming scissors, or electric clippers.</li>
-            <li>Recommendation: If inexperienced, visit a professional groomer for nail trimming and haircuts initially.</li>
-        </ul>
-
-        <h3>🏥 Medical</h3>
-        <ul>
-            <li>Phone number and address of the nearest 24HR veterinary clinic.</li>
-            <li>A sturdy pet carrier or crate for safe travel.</li>
+            <li><strong>🍴 Diet:</strong> Puppy/Adult kibble, stainless steel or ceramic food and water bowls. Please do not use gravity ball-style water bottles; they are unsuitable for dogs and prevent them from drinking enough water.</li>
+            <li><strong>😴 Sleep:</strong> A comfortable bed or a pet-specific breathable cot. For dogs lacking security, use a playpen initially or buy a roofed kennel to help them feel safe.</li>
+            <li><strong>🧼 Hygiene:</strong> Pet pee pads, poop bags, dog shampoo, nail clippers, and grooming scissors/clippers. If you are inexperienced or the dog is not yet comfortable with you, it is recommended to visit a professional groomer for nail trimming and haircuts.</li>
+            <li><strong>🏥 Medical:</strong> Phone number and address of the nearest 24HR veterinary clinic, and a sturdy pet carrier.</li>
         </ul>
     </div>
 
+    <!-- Daily Routine Section -->
     <div class="section-box">
-        <h2>🕒 Daily Routine</h2>
-        <p>Standardized 30-minute block schedule (05:00 - 00:00):</p>
-        
-        <table>
-            <thead>
-                <tr>
-                    <th>Time</th>
-                    <th>Activity</th>
-                </tr>
-            </thead>
-            <tbody id="routine-table">
-                </tbody>
-        </table>
-    </div>
+        <h2>Daily Routine</h2>
+        <div class="routine-grid">
+            <!-- JavaScript will generate time slots from 05:00 to 00:00 -->
+            <script>
+                const start = 5; // 5 AM
+                const end = 24;  // 12 AM
+                const container = document.currentScript.parentElement;
 
-    <div class="section-box">
-        <h2>🛡️ Health Management Flow</h2>
-        <div class="mermaid">
-            graph TD
-                Start[Abnormal Behavior Detected] --> A{Is the dog active?}
-                A -- Yes --> B[Observe for 12 hours]
-                A -- Lethargic --> C{Vomiting or Diarrhea?}
-                C -- Yes --> D[Contact 24HR Vet Immediately]
-                C -- No --> B
+                for (let i = start; i <= end; i++) {
+                    const hour = i === 24 ? "00" : (i < 10 ? "0" + i : i);
+                    
+                    // Create :00 slot
+                    createSlot(`${hour}:00`);
+                    
+                    // Create :30 slot (except for the very last one)
+                    if (i < 24) {
+                        createSlot(`${hour}:30`);
+                    }
+                }
+
+                function createSlot(time) {
+                    const div = document.createElement('div');
+                    div.className = 'time-slot';
+                    div.innerHTML = `<span class="time-label">${time}</span><input type="text" class="activity-input" placeholder="Add activity...">`;
+                    container.appendChild(div);
+                }
+            </script>
         </div>
     </div>
 </div>
-
-<script>
-    // 生成從 05:00 到 00:00 每半小時一格的表格
-    const tableBody = document.getElementById('routine-table');
-    const startHour = 5;
-    const endHour = 24;
-
-    for (let h = startHour; h <= endHour; h++) {
-        for (let m of ['00', '30']) {
-            if (h === 24 && m === '30') break;
-            const hourDisplay = h === 24 ? '00' : (h < 10 ? '0' + h : h);
-            const row = document.createElement('tr');
-            
-            // 填入一些範例文字
-            let activity = "Free time / Rest";
-            if(hourDisplay == "07" && m == "00") activity = "Morning Feeding";
-            if(hourDisplay == "07" && m == "30") activity = "Morning Walk";
-            if(hourDisplay == "18" && m == "00") activity = "Dinner Time";
-
-            row.innerHTML = `
-                <td class="time-slot">${hourDisplay}:${m}</td>
-                <td class="editable-cell">${activity}</td>
-            `;
-            tableBody.appendChild(row);
-            if (h === 24) break; 
-        }
-    }
-</script>
 
 </body>
 </html>
