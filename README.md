@@ -1,22 +1,22 @@
 # 🐾 Dog Care SOP
-**made by Poppy H.**
+> **made by Poppy H.**
 
 Welcome to the Dog Care Guide! I hope this helps first-time dog owners get started quickly. Wishing you and your dog a wonderful time together!
 
 ---
 
 ## 📋 Checklist
-In preparation for bringing your dog home, please ensure the following items are ready:
+<h3 style="color: #7a5a58;">Essential Items Before Your Dog Arrives</h3>
 
-* **Diet:** Puppy/Adult food, stainless steel or ceramic bowls for food and water. **Please avoid roller-ball water bottles (ball-point bottles)**; they are unsuitable for dogs and prevent them from drinking sufficient water.
-* **Sleep:** A comfortable pet bed or a breathable pet cot. For dogs lacking a sense of security, a playpen can help establish a safe space. Covered dog houses are also recommended to reduce anxiety.
-* **Hygiene:** Pet pee pads, poop bags, dog-specific shampoo, nail clippers, and grooming scissors or electric clippers. However, if you are inexperienced or the dog is still adjusting to you, it is highly recommended to visit a professional groomer for nail trimming and haircutting.
-* **Medical:** Phone number and address of the nearest 24HR veterinary clinic, and a sturdy pet carrier or crate.
+* **Diet:** Puppy/Adult food, stainless steel or ceramic bowls. **Avoid roller-ball water bottles**; they prevent sufficient hydration and can be harmful.
+* **Sleep:** Comfortable bed or breathable pet cot. Use a playpen or covered dog house for anxious dogs to create a safe space.
+* **Hygiene:** Pee pads, poop bags, dog shampoo, nail clippers, and grooming scissors. If inexperienced, please visit a professional groomer.
+* **Medical:** 24HR veterinary clinic contact info and a sturdy pet carrier.
 
 ---
 
 ## 🕒 Daily Routine
-*(Note: If the chart below doesn't render, please view it in the GitHub repository preview.)*
+*(Please refer to the repository preview for the visual Gantt chart)*
 
 ```mermaid
 gantt
