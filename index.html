@@ -72,7 +72,7 @@
             font-size: 1.2rem;
         }
 
-        /* --- Checklist 樣式 --- */
+        /* --- Checklist 佈局 --- */
         .checklist-item {
             display: flex;
             align-items: center;
@@ -99,7 +99,7 @@
             box-shadow: 0 8px 15px rgba(0,0,0,0.1);
         }
 
-        /* --- 新增：Exercise & Rest 表格樣式 --- */
+        /* --- 運動與休息表格 --- */
         .table-container {
             overflow-x: auto;
             margin-bottom: 20px;
@@ -118,20 +118,15 @@
             color: white;
             padding: 15px;
             text-align: left;
-            font-size: 1rem;
         }
 
         td {
             padding: 15px;
             border-bottom: 1px solid #ffe5df;
             font-size: 0.95rem;
-            vertical-align: top;
         }
 
-        tr:last-child td { border-bottom: none; }
-        tr:nth-child(even) { background-color: #fff9f8; }
-
-        /* --- Daily Routine 網格 --- */
+        /* --- Daily Routine 可輸入網格 --- */
         .routine-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -140,24 +135,44 @@
 
         .time-slot {
             background: white;
-            padding: 15px 20px;
+            padding: 10px 15px;
             border-radius: 12px;
             display: flex;
             align-items: center;
             border: 1px solid #ffe5df;
+            transition: border-color 0.3s;
+        }
+
+        .time-slot:focus-within {
+            border-color: #7a5a58; /* 點擊輸入時框線變深 */
         }
 
         .time-label {
             font-weight: bold;
             color: #7a5a58;
-            width: 85px;
+            width: 80px;
+            flex-shrink: 0;
+        }
+
+        /* 輸入框樣式 */
+        .activity-input {
+            border: none;
+            outline: none;
+            width: 100%;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            color: #555;
+            background: transparent;
+        }
+
+        .activity-input::placeholder {
+            color: #ddd;
         }
 
         @media (max-width: 768px) {
             h1 { font-size: 3.5rem; }
             .checklist-item { flex-direction: column; text-align: center; }
             .checklist-image { width: 100%; height: auto; }
-            th, td { font-size: 0.85rem; padding: 10px; }
         }
     </style>
 </head>
@@ -212,48 +227,18 @@
                 <thead>
                     <tr>
                         <th>Dog Type</th>
-                        <th>Suggested Daily Exercise</th>
-                        <th>Exercise Tips</th>
-                        <th>Total Daily Sleep</th>
+                        <th>Exercise</th>
+                        <th>Tips</th>
+                        <th>Sleep</th>
                         <th>Rest Focus</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><strong>High Energy</strong><br>(e.g., Border Collie, Husky)</td>
-                        <td>1.5 - 2+ Hours</td>
-                        <td>Jogging, fetch, advanced scent work, agility training.</td>
-                        <td>12 - 14 Hours</td>
-                        <td>Needs high-quality deep sleep; provide a quiet space to wind down after exercise.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Medium/Low Energy</strong><br>(e.g., Poodle, Mixed breeds)</td>
-                        <td>45 - 60 Mins</td>
-                        <td>Leisurely walks, indoor tug-of-war, social interaction.</td>
-                        <td>12 - 14 Hours</td>
-                        <td>Accustomed to segmented light sleep; a quiet environment is sufficient.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Small/Brachycephalic</strong><br>(e.g., Pug, Chihuahua)</td>
-                        <td>20 - 30 Mins</td>
-                        <td>Scent games, short walks (avoid high temperatures).</td>
-                        <td>14 - 16 Hours</td>
-                        <td>Quick energy depletion; needs frequent afternoon naps.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Puppy</strong><br>(Under 1 year)</td>
-                        <td>Small bursts<br>(Age in months × 5 mins)</td>
-                        <td>Low-impact play, socialization exploration, basic commands.</td>
-                        <td>18 - 20 Hours</td>
-                        <td>Critical growth period; lack of sleep affects development and emotional stability.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Senior</strong><br>(7+ years)</td>
-                        <td>30 - 45 Mins<br>(Based on health)</td>
-                        <td>Slow walks, gentle massage, environmental observation.</td>
-                        <td>16 - 18 Hours</td>
-                        <td>Joints tire easily; rest areas need good support (e.g., orthopedic beds).</td>
-                    </tr>
+                    <tr><td><strong>High Energy</strong></td><td>1.5 - 2+ Hours</td><td>Jogging, agility.</td><td>12-14 Hours</td><td>Quiet space.</td></tr>
+                    <tr><td><strong>Mid/Low Energy</strong></td><td>45 - 60 Mins</td><td>Leisurely walks.</td><td>12-14 Hours</td><td>Quiet environment.</td></tr>
+                    <tr><td><strong>Small/Brachy</strong></td><td>20 - 30 Mins</td><td>Short walks.</td><td>14-16 Hours</td><td>Afternoon naps.</td></tr>
+                    <tr><td><strong>Puppy</strong></td><td>Short bursts</td><td>Socialization.</td><td>18-20 Hours</td><td>Growth period.</td></tr>
+                    <tr><td><strong>Senior</strong></td><td>30 - 45 Mins</td><td>Gentle massage.</td><td>16-18 Hours</td><td>Joint support.</td></tr>
                 </tbody>
             </table>
         </div>
@@ -262,7 +247,8 @@
     <div class="section-box">
         <h2>Daily Routine</h2>
         <span class="subtitle-note">Try planning a daily routine with your fur baby!😊</span>
-        <div class="routine-grid" id="routineGrid"></div>
+        <div class="routine-grid" id="routineGrid">
+            </div>
     </div>
 </div>
 
@@ -273,10 +259,14 @@
         addSlot(`${hour}:00`);
         if (h < 24) addSlot(`${hour}:30`);
     }
+
     function addSlot(time) {
         const div = document.createElement('div');
         div.className = 'time-slot';
-        div.innerHTML = `<span class="time-label">${time}</span> <span class="activity-placeholder">Plan your activity...</span>`;
+        div.innerHTML = `
+            <span class="time-label">${time}</span>
+            <input type="text" class="activity-input" placeholder="Type here...">
+        `;
         grid.appendChild(div);
     }
 </script>
