@@ -3,29 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dog Care SOP</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Dog Care SOP Handbook</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
+        /* 全域設定 */
+        * { box-sizing: border-box; }
         body {
+            background-color: #ffdbb6; /* 您的指定背景色 */
             font-family: 'Poppins', sans-serif;
-            background-color: #ffdbb6;
             margin: 0;
             padding: 40px 20px;
-            color: #333;
+            color: #334155;
             line-height: 1.6;
         }
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
+        .container { max-width: 1000px; margin: 0 auto; }
 
+        /* 大標題：Fredoka One */
         h1 {
-            font-family: 'Fredoka One', cursive;
+            font-family: 'Fredoka', sans-serif;
             color: #5d688a;
             font-size: 5.5rem;
             text-align: center;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
         }
 
         .author {
@@ -33,240 +34,147 @@
             color: #5d688a;
             font-size: 1.3rem;
             display: block;
-            font-weight: 600;
             margin-bottom: 40px;
+            font-weight: 600;
         }
 
-        .intro-text {
-            color: #5d688a;
-            font-size: 1.35rem;
-            text-align: center;
-            margin: 40px auto;
-            font-style: italic;
-        }
-
+        /* 區塊容器 */
         .section-box {
-            background-color: #fff2ef;
-            padding: 50px;
+            background-color: #fff2ef; /* 您的指定區塊色 */
+            padding: 40px;
             border-radius: 30px;
             margin-bottom: 40px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
+        /* 小標題：Poppins */
         h2 {
             font-family: 'Poppins', sans-serif;
             color: #7a5a58;
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 700;
             text-align: center;
             margin-top: 0;
-            margin-bottom: 20px;
         }
 
-        .subtitle-note {
-            color: #7a5a58;
-            text-align: center;
-            display: block;
-            margin-bottom: 30px;
-            font-weight: 600;
-            font-size: 1.2rem;
-        }
-
-        /* --- Checklist 佈局 --- */
-        .checklist-item {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-
-        .checklist-text { flex: 1; }
-        .checklist-text strong {
-            color: #7a5a58;
-            font-size: 1.6rem;
-            display: block;
-            margin-bottom: 10px;
-            border-left: 6px solid #7a5a58;
-            padding-left: 15px;
-        }
-
-        .checklist-image {
-            width: 280px;
-            height: 200px;
-            border-radius: 20px;
-            object-fit: cover;
-            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-        }
-
-        /* --- 運動與休息表格 --- */
-        .table-container {
-            overflow-x: auto;
-            margin-bottom: 20px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-        }
-
-        th {
-            background-color: #7a5a58;
-            color: white;
-            padding: 15px;
-            text-align: left;
-        }
-
-        td {
-            padding: 15px;
-            border-bottom: 1px solid #ffe5df;
-            font-size: 0.95rem;
-        }
-
-        /* --- Daily Routine 可輸入網格 --- */
-        .routine-grid {
+        /* 1. 狗狗檔案卡 */
+        .profile-card {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 15px;
-        }
-
-        .time-slot {
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
             background: white;
-            padding: 10px 15px;
+            padding: 30px;
+            border-radius: 20px;
+            align-items: center;
+        }
+        .profile-info { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .info-field { display: flex; flex-direction: column; }
+        .info-field label { font-size: 0.8rem; color: #7a5a58; font-weight: 700; }
+        .info-field input { border: 1px solid #ffe5df; padding: 8px; border-radius: 8px; font-family: 'Poppins'; }
+
+        /* 2. 互動式清單 */
+        .checklist-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .check-item {
+            background: white;
+            padding: 15px;
             border-radius: 12px;
             display: flex;
             align-items: center;
-            border: 1px solid #ffe5df;
-            transition: border-color 0.3s;
+            gap: 12px;
+            cursor: pointer;
         }
+        .check-item input { width: 20px; height: 20px; accent-color: #7a5a58; }
+        .check-item input:checked + span { text-decoration: line-through; color: #cbd5e1; }
 
-        .time-slot:focus-within {
-            border-color: #7a5a58; /* 點擊輸入時框線變深 */
-        }
+        /* 3. 訓練小撇步 & Q&A */
+        .tile-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .tile { background: white; padding: 20px; border-radius: 20px; text-align: center; border-bottom: 5px solid #5d688a; }
+        .tile i { font-size: 2rem; color: #5d688a; margin-bottom: 10px; }
+        .tile h4 { margin: 10px 0; color: #7a5a58; }
 
-        .time-label {
-            font-weight: bold;
-            color: #7a5a58;
-            width: 80px;
-            flex-shrink: 0;
-        }
-
-        /* 輸入框樣式 */
-        .activity-input {
-            border: none;
-            outline: none;
-            width: 100%;
-            font-family: 'Poppins', sans-serif;
-            font-size: 0.95rem;
-            color: #555;
-            background: transparent;
-        }
-
-        .activity-input::placeholder {
-            color: #ddd;
-        }
+        /* 4. Daily Routine 輸入框 */
+        .routine-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; }
+        .time-box { background: white; padding: 10px; border-radius: 10px; display: flex; border: 1px solid #ffe5df; }
+        .time-label { font-weight: 700; color: #7a5a58; width: 60px; font-size: 0.9rem; }
+        .time-input { border: none; outline: none; width: 100%; font-family: 'Poppins'; font-size: 0.9rem; }
 
         @media (max-width: 768px) {
-            h1 { font-size: 3.5rem; }
-            .checklist-item { flex-direction: column; text-align: center; }
-            .checklist-image { width: 100%; height: auto; }
+            h1 { font-size: 3rem; }
+            .profile-card { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="header-section">
-        <h1>🐾 Dog Care SOP</h1>
-        <span class="author">made by Poppy H.</span>
-    </div>
-
-    <div class="intro-text">
-        Welcome to the Dog Care Manual! We hope this helps first-time dog owners get started quickly. Wishing you and your dog a wonderful time together!
-    </div>
+    <h1>🐾 Dog Care SOP</h1>
+    <span class="author">made by Poppy H.</span>
 
     <div class="section-box">
-        <h2>Checklist</h2>
-        <div class="checklist-item">
-            <div class="checklist-text">
-                <strong>🍴 Diet & Nutrition</strong>
-                Puppy/Adult kibble, stainless steel or ceramic food and water bowls. Please do not use gravity ball-style water bottles; they are unsuitable for dogs and prevent them from drinking enough water.
+        <h2>Dog Profile</h2>
+        <div class="profile-card">
+            <div style="text-align: center;">
+                <div style="width:150px; height:150px; background:#eee; border-radius:50%; margin:0 auto; display:flex; align-items:center; justify-content:center;">
+                    <i class="fa-solid fa-camera fa-2x" style="color:#ccc;"></i>
+                </div>
+                <p style="font-size:0.8rem;">Doggy Photo</p>
             </div>
-            <img src="diet.jpg" alt="Diet" class="checklist-image">
-        </div>
-        <div class="checklist-item">
-            <div class="checklist-text">
-                <strong>😴 Sleep & Security</strong>
-                A comfortable bed or a pet-specific breathable cot. For dogs lacking security, use a playpen initially or buy a roofed kennel to help them feel safe.
+            <div class="profile-info">
+                <div class="info-field"><label>Name</label><input type="text" placeholder="e.g. Poppy"></div>
+                <div class="info-field"><label>Breed</label><input type="text" placeholder="e.g. Poodle"></div>
+                <div class="info-field"><label>Birthday</label><input type="text" placeholder="YYYY/MM/DD"></div>
+                <div class="info-field"><label>Weight</label><input type="text" placeholder="e.g. 5kg"></div>
             </div>
-            <img src="sleep.jpg" alt="Sleep" class="checklist-image">
-        </div>
-        <div class="checklist-item">
-            <div class="checklist-text">
-                <strong>🧼 Hygiene Essentials</strong>
-                Pet pee pads, poop bags, dog shampoo, nail clippers, and grooming scissors/clippers. If you are inexperienced, it is recommended to visit a professional groomer.
-            </div>
-            <img src="hygiene.jpg" alt="Hygiene" class="checklist-image">
-        </div>
-        <div class="checklist-item">
-            <div class="checklist-text">
-                <strong>🏥 Medical Readiness</strong>
-                Phone number and address of the nearest 24HR veterinary clinic, and a sturdy pet carrier.
-            </div>
-            <img src="medical.jpg" alt="Medical" class="checklist-image">
         </div>
     </div>
 
     <div class="section-box">
-        <h2>Exercise & Rest Guide</h2>
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Dog Type</th>
-                        <th>Exercise</th>
-                        <th>Tips</th>
-                        <th>Sleep</th>
-                        <th>Rest Focus</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td><strong>High Energy</strong></td><td>1.5 - 2+ Hours</td><td>Jogging, agility.</td><td>12-14 Hours</td><td>Quiet space.</td></tr>
-                    <tr><td><strong>Mid/Low Energy</strong></td><td>45 - 60 Mins</td><td>Leisurely walks.</td><td>12-14 Hours</td><td>Quiet environment.</td></tr>
-                    <tr><td><strong>Small/Brachy</strong></td><td>20 - 30 Mins</td><td>Short walks.</td><td>14-16 Hours</td><td>Afternoon naps.</td></tr>
-                    <tr><td><strong>Puppy</strong></td><td>Short bursts</td><td>Socialization.</td><td>18-20 Hours</td><td>Growth period.</td></tr>
-                    <tr><td><strong>Senior</strong></td><td>30 - 45 Mins</td><td>Gentle massage.</td><td>16-18 Hours</td><td>Joint support.</td></tr>
-                </tbody>
-            </table>
+        <h2>Shopping Checklist</h2>
+        <div class="checklist-grid">
+            <label class="check-item"><input type="checkbox"><span>Stainless Steel Bowls</span></label>
+            <label class="check-item"><input type="checkbox"><span>Puppy/Adult Kibble</span></label>
+            <label class="check-item"><input type="checkbox"><span>Comfortable Dog Bed</span></label>
+            <label class="check-item"><input type="checkbox"><span>Pee Pads & Poop Bags</span></label>
+            <label class="check-item"><input type="checkbox"><span>Dog Shampoo</span></label>
+            <label class="check-item"><input type="checkbox"><span>Nail Clippers</span></label>
+        </div>
+    </div>
+
+    <div class="section-box">
+        <h2>Training Tips</h2>
+        <div class="tile-grid">
+            <div class="tile"><i class="fa-solid fa-toilet"></i><h4>Potty</h4><p style="font-size:0.8rem;">Every 2 hours & after meals.</p></div>
+            <div class="tile"><i class="fa-solid fa-hand"></i><h4>Sit</h4><p style="font-size:0.8rem;">Hold treat over nose and move back.</p></div>
+            <div class="tile"><i class="fa-solid fa-dog"></i><h4>Social</h4><p style="font-size:0.8rem;">Meet new people & sounds gently.</p></div>
+        </div>
+    </div>
+
+    <div class="section-box">
+        <h2>Common Q&A</h2>
+        <div class="tile-grid">
+            <div class="tile" style="border-bottom-color:#7a5a58;"><h4>Toxic?</h4><p style="font-size:0.8rem;">No Grapes, Chocolate, or Onions.</p></div>
+            <div class="tile" style="border-bottom-color:#7a5a58;"><h4>Night Crying?</h4><p style="font-size:0.8rem;">Place bed near yours for comfort.</p></div>
         </div>
     </div>
 
     <div class="section-box">
         <h2>Daily Routine</h2>
-        <span class="subtitle-note">Try planning a daily routine with your fur baby!😊</span>
-        <div class="routine-grid" id="routineGrid">
-            </div>
+        <p style="text-align:center; font-weight:600; color:#7a5a58;">Try planning a daily routine!😊</p>
+        <div class="routine-grid" id="routineGrid"></div>
     </div>
 </div>
 
 <script>
     const grid = document.getElementById('routineGrid');
     for (let h = 5; h <= 24; h++) {
-        const hour = h === 24 ? "00" : (h < 10 ? "0" + h : h);
-        addSlot(`${hour}:00`);
-        if (h < 24) addSlot(`${hour}:30`);
+        const hh = h === 24 ? "00" : (h < 10 ? "0" + h : h);
+        createSlot(`${hh}:00`);
+        if (h < 24) createSlot(`${hh}:30`);
     }
-
-    function addSlot(time) {
+    function createSlot(time) {
         const div = document.createElement('div');
-        div.className = 'time-slot';
-        div.innerHTML = `
-            <span class="time-label">${time}</span>
-            <input type="text" class="activity-input" placeholder="Type here...">
-        `;
+        div.className = 'time-box';
+        div.innerHTML = `<span class="time-label">${time}</span><input type="text" class="time-input" placeholder="Type here...">`;
         grid.appendChild(div);
     }
 </script>
