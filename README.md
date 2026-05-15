@@ -4,7 +4,7 @@
 
 ![dog care sop.png](dog%20care%20sop.png)
 
----
+
 
 ## About This Project
 
@@ -16,7 +16,7 @@ Hi there! As a dog lover, I created this project to empower every new pet parent
 
 It's more than just a manual—it's a **Digital Care Assistant** built with love. With a warm interface and thoughtful feature integration, I hope to transform the "first-time owner anxiety" into a journey full of joy and confidence! ✨
 
----
+
 
 ## Highlights
 
@@ -28,7 +28,7 @@ It's more than just a manual—it's a **Digital Care Assistant** built with love
 | **🏥 Emergency GPS** | 最快速度找到附近的 24H 醫護，給毛孩最安心的後盾。<br>*One-click access to the nearest 24H veterinary support.* |
 | **🖨️ Caretaker Export** | 要出遠門嗎？一鍵產出超專業清單，交接照護超放心！<br>*Generating a professional "Cheat Sheet" for your pet sitter.* |
 
----
+
 
 ## Tech Behind the Scenes
 
@@ -37,7 +37,7 @@ It's more than just a manual—it's a **Digital Care Assistant** built with love
 - **🗂️ Storage:** Browser LocalStorage API
 - **📄 Details:** FontAwesome & Google Fonts
 
----
+
 
 ## Getting Started
 
